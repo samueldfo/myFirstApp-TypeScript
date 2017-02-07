@@ -14,3 +14,10 @@ app.get('/teste/user', function (req, res) {
 app.listen(port, function () {
     console.log('Server started! At http://localhost:' + port);
 });
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/teste/user', function (req, res) {
+    var token = req.body.token;
+    res.send(token);
+});
