@@ -1,14 +1,21 @@
 var express = require('express')
 var app = express()
+var port = process.env.PORT || 8080
+
+app.get('/teste', function (req: any, res: any) {
+  res.send('Teste: 1')
+})
 
 app.get('/', function (req: any, res: any) {
   res.send('Hello World!')
 })
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.get('/teste/user', function(req: any, res: any) {
+  var token = req.param('token')
+  res.send(token)
 })
 
-app.post('/teste', function (req: any, res: any) {
-  res.send('Give me the key')
+app.listen(port, function () {
+  console.log('Server started! At http://localhost:' + port)
 })
+
