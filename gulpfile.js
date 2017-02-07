@@ -2,9 +2,9 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
  
 gulp.task('default', function () {
-    return gulp.src('src/**/*.ts')
+    return gulp.src('*.ts')
         .pipe(ts({
             noImplicitAny: true
         }))
-        .pipe(gulp.dest('built/local'));
+        .pipe(gulp.dest(''));
 });
