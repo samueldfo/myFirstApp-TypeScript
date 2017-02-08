@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 app.get('/teste', function (req, res) {
-    res.send('Teste: 1');
+    res.send('Teste: 5');
 });
 app.get('/', function (req, res) {
     res.send('Hello World!');
